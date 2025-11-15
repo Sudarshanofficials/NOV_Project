@@ -1,0 +1,14 @@
+{
+  "name": "SalesOrderLineKey",
+  "dataType": "int64",
+  "sourceColumn": "SalesOrderLineKey",
+  "formatString": "0",
+  "lineageTag": "588d4926-0b41-4d25-bb64-e165f8094f5e",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Business Type",
+  "dataType": "string",
+  "sourceColumn": "Business Type",
+  "lineageTag": "392dea66-08da-49dd-a180-0d29d4386a39",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "2f2ad4db-730f-4adf-b72a-1ac7d9c6a9ea",
+  "fromTable": "Date",
+  "fromColumn": "Full Date",
+  "toTable": "LocalDateTable_86e11198-923e-4ba5-bf76-cd44c5e86740",
+  "toColumn": "Date",
+  "joinOnDateBehavior": "datePartOnly"
+}

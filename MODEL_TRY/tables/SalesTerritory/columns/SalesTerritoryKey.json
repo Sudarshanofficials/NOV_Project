@@ -1,0 +1,14 @@
+{
+  "name": "SalesTerritoryKey",
+  "dataType": "int64",
+  "sourceColumn": "SalesTerritoryKey",
+  "formatString": "0",
+  "lineageTag": "29c983f4-283a-455f-8c19-8111af647d86",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

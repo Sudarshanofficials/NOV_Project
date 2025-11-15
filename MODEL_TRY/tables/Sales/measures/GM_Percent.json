@@ -1,0 +1,6 @@
+{
+  "name": "GM_Percent",
+  "expression": "DIVIDE(sum(Sales[GM Amount]),SUM(Sales[Sales Amount]),0)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "lineageTag": "058d910b-5631-47d2-91cc-bdfe7bb65d0a"
+}

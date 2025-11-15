@@ -1,0 +1,13 @@
+{
+  "name": "City",
+  "dataType": "string",
+  "sourceColumn": "City",
+  "lineageTag": "d73f7dfe-35ee-4e01-abbe-1ea18f8acbbc",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

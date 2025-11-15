@@ -1,0 +1,13 @@
+{
+  "name": "Fiscal Year",
+  "dataType": "string",
+  "sourceColumn": "Fiscal Year",
+  "lineageTag": "97c59d69-0eae-442e-8cbe-d3ec816ac037",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

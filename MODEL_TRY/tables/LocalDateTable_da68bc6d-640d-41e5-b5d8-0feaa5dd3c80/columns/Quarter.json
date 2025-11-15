@@ -1,0 +1,21 @@
+{
+  "type": "calculated",
+  "name": "Quarter",
+  "dataType": "string",
+  "isHidden": true,
+  "expression": "\"Qtr \" & [QuarterNo]",
+  "sortByColumn": "QuarterNo",
+  "lineageTag": "24d933d5-5ea6-4ce0-8cbc-f2c3c482424a",
+  "dataCategory": "Quarters",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "User"
+    },
+    {
+      "name": "TemplateId",
+      "value": "Quarter"
+    }
+  ]
+}

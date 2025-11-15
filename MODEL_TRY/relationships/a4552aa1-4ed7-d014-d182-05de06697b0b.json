@@ -1,0 +1,7 @@
+{
+  "name": "a4552aa1-4ed7-d014-d182-05de06697b0b",
+  "fromTable": "Sales",
+  "fromColumn": "OrderDateKey",
+  "toTable": "Date",
+  "toColumn": "Date"
+}

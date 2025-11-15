@@ -1,0 +1,14 @@
+{
+  "name": "Order Quantity",
+  "dataType": "int64",
+  "sourceColumn": "Order Quantity",
+  "formatString": "0",
+  "lineageTag": "97d98f10-674d-4d20-a4db-858b1d829040",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}
