@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\tables",
+    "\\tables\\Customer",
+    "\\tables\\Customer\\measures"
+  ],
+  "SelectedNode": "\\tables\\Customer\\measures\\NCID_1.json",
+  "PreviewInSolutionExplorer": false
+}
