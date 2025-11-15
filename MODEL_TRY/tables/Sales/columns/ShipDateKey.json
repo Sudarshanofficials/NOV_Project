@@ -1,0 +1,14 @@
+{
+  "name": "ShipDateKey",
+  "dataType": "int64",
+  "sourceColumn": "ShipDateKey",
+  "formatString": "0",
+  "lineageTag": "7ad3759f-d928-4f30-b3f8-784231309099",
+  "summarizeBy": "count",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

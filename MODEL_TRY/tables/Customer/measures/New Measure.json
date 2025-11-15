@@ -1,0 +1,5 @@
+{
+  "name": "New Measure",
+  "expression": "COUNT(Customer[Customer ID]",
+  "lineageTag": "d119cc69-ef20-48c6-b033-1243693f369e"
+}

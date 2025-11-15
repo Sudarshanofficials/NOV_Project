@@ -1,0 +1,14 @@
+{
+  "name": "Customer",
+  "lineageTag": "11a7a634-3df9-4d9b-bf6b-99791e59c4f4",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navigation"
+    }
+  ]
+}

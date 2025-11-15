@@ -1,0 +1,16 @@
+{
+  "name": "Reseller",
+  "mode": "import",
+  "source": {
+    "type": "m",
+    "expression": [
+      "let",
+      "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\91771\\Downloads\\GSPBI25 - Sales.xlsx\"), null, true),",
+      "    Reseller_Table = Source{[Item=\"Reseller\",Kind=\"Table\"]}[Data],",
+      "    #\"Changed Type\" = Table.TransformColumnTypes(Reseller_Table,{{\"ResellerKey\", Int64.Type}, {\"Reseller ID\", type text}, {\"Business Type\", type text}, {\"Reseller\", type text}, {\"City\", type text}, {\"State-Province\", type text}, {\"Country-Region\", type text}, {\"Postal Code\", type text}}),",
+      "    #\"Removed Top Rows\" = Table.Skip(#\"Changed Type\",1)",
+      "in",
+      "    #\"Removed Top Rows\""
+    ]
+  }
+}

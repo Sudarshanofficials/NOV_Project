@@ -1,0 +1,13 @@
+{
+  "name": "Fiscal Quarter",
+  "dataType": "string",
+  "sourceColumn": "Fiscal Quarter",
+  "lineageTag": "d85bf68b-e69a-44bd-b1a4-746b40f446e5",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

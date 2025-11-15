@@ -1,0 +1,6 @@
+{
+  "name": "Total_Customer_ID",
+  "expression": "COUNT(Customer[Customer ID])",
+  "formatString": "0",
+  "lineageTag": "42a4b490-6850-4bfe-bdf5-6268be895915"
+}

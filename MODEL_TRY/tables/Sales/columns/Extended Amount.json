@@ -1,0 +1,17 @@
+{
+  "name": "Extended Amount",
+  "dataType": "double",
+  "sourceColumn": "Extended Amount",
+  "lineageTag": "be6f644b-1139-4434-bf7f-4d2926587524",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "PBI_FormatHint",
+      "value": "{\"isGeneralNumber\":true}"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "AutoDetected_63bb1c41-202b-46c8-b537-433bbec6b1b5",
+  "fromTable": "Sales",
+  "fromColumn": "ResellerKey",
+  "toTable": "Reseller",
+  "toColumn": "ResellerKey"
+}

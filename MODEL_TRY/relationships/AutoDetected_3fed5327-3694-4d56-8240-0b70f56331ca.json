@@ -1,0 +1,7 @@
+{
+  "name": "AutoDetected_3fed5327-3694-4d56-8240-0b70f56331ca",
+  "fromTable": "Sales",
+  "fromColumn": "SalesTerritoryKey",
+  "toTable": "SalesTerritory",
+  "toColumn": "SalesTerritoryKey"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Total Product Cost",
+  "dataType": "double",
+  "sourceColumn": "Total Product Cost",
+  "formatString": "\\$#,0.0000;(\\$#,0.0000);\\$#,0.0000",
+  "lineageTag": "eacaeb88-5f28-4027-93b7-42d7ffb802b3",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

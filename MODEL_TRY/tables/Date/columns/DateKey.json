@@ -1,0 +1,14 @@
+{
+  "name": "DateKey",
+  "dataType": "int64",
+  "sourceColumn": "DateKey",
+  "formatString": "0",
+  "lineageTag": "ea48d5c3-08fe-45a5-88f5-213f7d4263e9",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

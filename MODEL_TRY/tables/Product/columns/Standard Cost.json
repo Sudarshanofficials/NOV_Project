@@ -1,0 +1,17 @@
+{
+  "name": "Standard Cost",
+  "dataType": "double",
+  "sourceColumn": "Standard Cost",
+  "lineageTag": "b0048f9d-8672-4ca1-bfe4-4ec48a56adb4",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "PBI_FormatHint",
+      "value": "{\"isGeneralNumber\":true}"
+    }
+  ]
+}

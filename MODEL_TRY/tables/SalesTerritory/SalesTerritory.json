@@ -1,0 +1,14 @@
+{
+  "name": "SalesTerritory",
+  "lineageTag": "b3a42fd4-889a-4984-b7f2-74bf53cf511b",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navigation"
+    }
+  ]
+}
