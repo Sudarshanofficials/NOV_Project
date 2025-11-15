@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 347.119414695102,
+            "y": -9.96696245538169
+          },
+          "nodeIndex": "Customer",
+          "nodeLineageTag": "11a7a634-3df9-4d9b-bf6b-99791e59c4f4",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1467.6617288124671,
+            "y": 593.81767702774721
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "5252a288-fe14-475e-bda4-5582702a90eb",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1011.6638474792608,
+            "y": 46.620287274320845
+          },
+          "nodeIndex": "Product",
+          "nodeLineageTag": "31c4840e-61aa-4fb0-b9e3-d4ac20ee5d12",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 407.16908864987818,
+            "y": 1153.6353540554944
+          },
+          "nodeIndex": "Reseller",
+          "nodeLineageTag": "edccdd7a-3841-4dda-8b54-abb17451286e",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 720.97055505507694,
+            "y": 397.59345456132041
+          },
+          "nodeIndex": "Sales",
+          "nodeLineageTag": "777ddb34-cf26-4e66-a19d-1bc8af5a0935",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 522.92374157380721
+          },
+          "nodeIndex": "SalesOrder",
+          "nodeLineageTag": "fd65005f-ee37-4160-a148-099e1f056ffe",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 626.18547362989852,
+            "y": 922.73037993612547
+          },
+          "nodeIndex": "SalesTerritory",
+          "nodeLineageTag": "b3a42fd4-889a-4984-b7f2-74bf53cf511b",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 6
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 40.052554724883237,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

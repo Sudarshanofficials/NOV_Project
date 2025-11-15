@@ -1,0 +1,203 @@
+table Sales
+	lineageTag: 777ddb34-cf26-4e66-a19d-1bc8af5a0935
+
+	measure 'GM Amount Label Color' = ```
+			
+			SWITCH(
+			    TRUE(),
+			    [GM_Percent] < 0, "#FF0000",
+			    [GM_Percent] < 0.10, "#B8860B",    
+			    [GM_Percent] > 0.50, "#6BBF59",      
+			    "#000000"                           
+			)
+			```
+		lineageTag: ce9ef492-fbea-4c4c-8f57-0d76846bc375
+
+	measure GM_Percent = DIVIDE(sum(Sales[GM Amount]),SUM(Sales[Sales Amount]),0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 058d910b-5631-47d2-91cc-bdfe7bb65d0a
+
+	measure AUC_Color = IF(SUM(Sales[AUR])<SUM(Sales[AUC]), "#FF0000","#000000")
+		lineageTag: a9d7c98f-e33c-44bf-b46e-e03e4165569c
+
+	column SalesOrderLineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 588d4926-0b41-4d25-bb64-e165f8094f5e
+		summarizeBy: count
+		sourceColumn: SalesOrderLineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResellerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c60c157-f036-4764-97be-4f90a4a0a376
+		summarizeBy: none
+		sourceColumn: ResellerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 502f784b-d7fd-45ad-8b90-c46846b91a3c
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 997e804e-cbf2-4530-a98e-7d7f93443864
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ff83db60-2e40-43ba-aa99-2ba49c3675dc
+		summarizeBy: none
+		sourceColumn: OrderDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DueDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 96b282d4-1ff4-4fe9-bf99-e514113585c8
+		summarizeBy: count
+		sourceColumn: DueDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ad3759f-d928-4f30-b3f8-784231309099
+		summarizeBy: count
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e0d01ab-8ad9-4d2f-9af3-f8596a7d5e6d
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Quantity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 97d98f10-674d-4d20-a4db-858b1d829040
+		summarizeBy: sum
+		sourceColumn: Order Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Price'
+		dataType: double
+		lineageTag: 09487f07-2e17-4844-a041-1b748e389080
+		summarizeBy: sum
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Extended Amount'
+		dataType: double
+		lineageTag: be6f644b-1139-4434-bf7f-4d2926587524
+		summarizeBy: sum
+		sourceColumn: Extended Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Standard Cost'
+		dataType: double
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: 0b4f12cd-4aba-492c-a75c-5d69889b8c36
+		summarizeBy: sum
+		sourceColumn: Product Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Total Product Cost'
+		dataType: double
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: eacaeb88-5f28-4027-93b7-42d7ffb802b3
+		summarizeBy: sum
+		sourceColumn: Total Product Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Amount'
+		dataType: double
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: ec5f2038-fa5f-4154-a296-79dc0489eec6
+		summarizeBy: sum
+		sourceColumn: Sales Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'GM Amount' = Sales[Sales Amount]-Sales[Product Standard Cost]
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: f05e5bbc-14c3-4a26-8d76-d366fdd2918c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'GM percent' = DIVIDE(Sales[GM Amount],Sales[Sales Amount],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f3bd3661-aace-41ec-875a-93ffad22630d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUR = DIVIDE(Sales[Sales Amount],Sales[Order Quantity],0)
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: 2457b33a-3864-46e3-ba2b-fc3c4e93d21b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUC = divide(Sales[Product Standard Cost],Sales[Order Quantity],0)
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: ce22fed5-621a-4f90-b846-744a35109225
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\91771\Downloads\GSPBI25 - Sales.xlsx"), null, true),
+				    Sales_Table = Source{[Item="Sales",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Sales_Table,{{"SalesOrderLineKey", Int64.Type}, {"ResellerKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"ProductKey", Int64.Type}, {"OrderDateKey", Int64.Type}, {"DueDateKey", Int64.Type}, {"ShipDateKey", Int64.Type}, {"SalesTerritoryKey", Int64.Type}, {"Order Quantity", Int64.Type}, {"Unit Price", type number}, {"Extended Amount", type number}, {"Unit Price Discount Pct", Int64.Type}, {"Product Standard Cost", type number}, {"Total Product Cost", type number}, {"Sales Amount", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each true),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Unit Price Discount Pct"}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Removed Columns", each ([CustomerKey] <> -1))
+				in
+				    #"Filtered Rows1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

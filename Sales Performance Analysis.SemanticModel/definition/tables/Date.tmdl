@@ -1,0 +1,93 @@
+table Date
+	lineageTag: 5252a288-fe14-475e-bda4-5582702a90eb
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ea48d5c3-08fe-45a5-88f5-213f7d4263e9
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6e594321-1235-44a7-b4d2-809248a21e11
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: f37faf29-9456-4a0f-93d6-4a4304cec2f9
+			defaultHierarchy: LocalDateTable_da68bc6d-640d-41e5-b5d8-0feaa5dd3c80.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 97c59d69-0eae-442e-8cbe-d3ec816ac037
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: d85bf68b-e69a-44bd-b1a4-746b40f446e5
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 578a28fe-6884-47b2-9023-44f607ee1ecc
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 80be128f-38fc-4e4c-b198-4281f5e911da
+		summarizeBy: none
+		sourceColumn: Full Date
+
+		variation Variation
+			isDefault
+			relationship: 2f2ad4db-730f-4adf-b72a-1ac7d9c6a9ea
+			defaultHierarchy: LocalDateTable_86e11198-923e-4ba5-bf76-cd44c5e86740.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8850a8fa-7a59-4ca2-ae8f-87fa67c8bcc6
+		summarizeBy: count
+		sourceColumn: MonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\91771\Downloads\GSPBI25 - Sales.xlsx"), null, true),
+				    Date_Table = Source{[Item="Date",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Date_Table,{{"DateKey", Int64.Type}, {"Date", type date}, {"Fiscal Year", type text}, {"Fiscal Quarter", type text}, {"Month", type date}, {"Full Date", type date}, {"MonthKey", Int64.Type}}),
+				    #"Extracted Month" = Table.TransformColumns(#"Changed Type",{{"Month", Date.Month, Int64.Type}})
+				in
+				    #"Extracted Month"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

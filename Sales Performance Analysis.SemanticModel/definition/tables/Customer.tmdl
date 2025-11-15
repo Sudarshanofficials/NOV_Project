@@ -1,0 +1,86 @@
+table Customer
+	lineageTag: 11a7a634-3df9-4d9b-bf6b-99791e59c4f4
+
+	measure Total_Customer_ID = COUNT(Customer[Customer ID])
+		formatString: 0
+		lineageTag: 42a4b490-6850-4bfe-bdf5-6268be895915
+
+	measure TCID = COUNT(Customer[Customer ID])
+		lineageTag: 407cae45-8ff8-477f-aa3a-519f665d9e89
+
+	measure TCID_1 = COUNT(Customer[Customer ID])
+		lineageTag: 516c54a9-fdd8-4664-88c1-8b7097e08c58
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 80e70117-8416-4ca6-b204-622a72eff2ab
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 5f9cb84f-7cbc-42cc-81f7-5596ff280c2a
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer
+		dataType: string
+		lineageTag: 6fc7aa13-04cf-4d01-8f93-4da1a49b28c2
+		summarizeBy: none
+		sourceColumn: Customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: d73f7dfe-35ee-4e01-abbe-1ea18f8acbbc
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State-Province
+		dataType: string
+		lineageTag: fc7def9f-62b9-4fc3-b9ae-58e9e121ce9c
+		summarizeBy: none
+		sourceColumn: State-Province
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country-Region
+		dataType: string
+		lineageTag: ff22477d-6b9a-4ad0-9c0d-e7cd3c91049c
+		summarizeBy: none
+		sourceColumn: Country-Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 07a40894-09c4-4ac8-aee0-36c8e67eda60
+		summarizeBy: none
+		sourceColumn: Postal Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\91771\Downloads\GSPBI25 - Sales.xlsx"), null, true),
+				    Customer_Table = Source{[Item="Customer",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Customer_Table,{{"CustomerKey", Int64.Type}, {"Customer ID", type text}, {"Customer", type text}, {"City", type text}, {"State-Province", type text}, {"Country-Region", type text}, {"Postal Code", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each true),
+				    #"Removed Top Rows" = Table.Skip(#"Filtered Rows",1)
+				in
+				    #"Removed Top Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,128 @@
+table Product
+	lineageTag: 31c4840e-61aa-4fb0-b9e3-d4ac20ee5d12
+
+	measure 'Selected Product Category Title' = ```
+			
+			"Category: " & 
+			IF(
+			    HASONEVALUE('Product'[Category]),
+			    VALUES('Product'[Category]),
+			    "All Categories"
+			)
+			```
+		lineageTag: 55e269ef-2e97-41b4-92a6-c93b7b7054a9
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 99ea0e16-affc-49d2-8d04-2f667da6626f
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU
+		dataType: string
+		lineageTag: 586369e6-2c5e-4212-847b-1cb66c97f1bb
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 0a9c21bd-bded-4959-8418-07d0a86f4f8b
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Cost'
+		dataType: double
+		lineageTag: b0048f9d-8672-4ca1-bfe4-4ec48a56adb4
+		summarizeBy: none
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Color
+		dataType: string
+		lineageTag: e8aae482-b32c-4171-b27e-88431c971268
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'List Price'
+		dataType: double
+		lineageTag: 47850144-2a0e-4229-80d7-3963646ec2a1
+		summarizeBy: none
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Model
+		dataType: string
+		lineageTag: 22d90994-f440-4a52-9038-168ffd90bb76
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcategory
+		dataType: string
+		lineageTag: a24ec382-1706-4e83-a4e8-c304282efab2
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: beb8da7a-74bb-4256-a49c-1b420c9b8367
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Bracket' =
+			
+			SWITCH(
+			    TRUE(),
+			    [List Price] <= 10, "0 – 10",
+			    [List Price] <= 20, "10.01 – 20",
+			    [List Price] <= 50, "20.01 – 50",
+			    [List Price] <= 100, "50.01 – 100",
+			    [List Price] <= 200, "100.01 – 200",
+			    [List Price] <= 500, "200.01 – 500",
+			    [List Price] <= 1000, "500.01 – 1000",
+			    [List Price] <= 2000, "1000.01 – 2000",
+			    [List Price] <= 5000, "2000.01 – 5000",
+			    "5000.01+"
+			)
+		lineageTag: cc948d64-a8be-4bac-94cc-b53145fcc3b9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\91771\Downloads\GSPBI25 - Sales.xlsx"), null, true),
+				    Product_Table = Source{[Item="Product",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Product_Table,{{"ProductKey", Int64.Type}, {"SKU", type text}, {"Product", type text}, {"Standard Cost", type number}, {"Color", type text}, {"List Price", type number}, {"Model", type text}, {"Subcategory", type text}, {"Category", type text}}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Changed Type",{{"Product", Text.Trim, type text}}),
+				    #"Cleaned Text" = Table.TransformColumns(#"Trimmed Text",{{"Product", Text.Clean, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Cleaned Text", each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
