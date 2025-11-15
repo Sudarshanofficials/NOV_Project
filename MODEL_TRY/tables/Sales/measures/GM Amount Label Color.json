@@ -1,0 +1,14 @@
+{
+  "name": "GM Amount Label Color",
+  "expression": [
+    "",
+    "SWITCH(",
+    "    TRUE(),",
+    "    [GM_Percent] < 0, \"#FF0000\",",
+    "    [GM_Percent] < 0.10, \"#B8860B\",    ",
+    "    [GM_Percent] > 0.50, \"#6BBF59\",      ",
+    "    \"#000000\"                           ",
+    ")"
+  ],
+  "lineageTag": "ce9ef492-fbea-4c4c-8f57-0d76846bc375"
+}

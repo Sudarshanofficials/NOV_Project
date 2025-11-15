@@ -1,0 +1,14 @@
+{
+  "name": "SalesOrder",
+  "lineageTag": "fd65005f-ee37-4160-a148-099e1f056ffe",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navigation"
+    }
+  ]
+}

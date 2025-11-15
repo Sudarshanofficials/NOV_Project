@@ -1,0 +1,13 @@
+{
+  "name": "Selected Product Category Title",
+  "expression": [
+    "",
+    "\"Category: \" & ",
+    "IF(",
+    "    HASONEVALUE('Product'[Category]),",
+    "    VALUES('Product'[Category]),",
+    "    \"All Categories\"",
+    ")"
+  ],
+  "lineageTag": "55e269ef-2e97-41b4-92a6-c93b7b7054a9"
+}

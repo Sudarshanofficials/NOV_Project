@@ -1,0 +1,14 @@
+{
+  "name": "Date",
+  "lineageTag": "5252a288-fe14-475e-bda4-5582702a90eb",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navigation"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "TCID",
+  "expression": "COUNT(Customer[Customer ID])",
+  "lineageTag": "407cae45-8ff8-477f-aa3a-519f665d9e89"
+}

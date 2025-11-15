@@ -1,0 +1,16 @@
+{
+  "type": "calculated",
+  "name": "GM percent",
+  "dataType": "double",
+  "isDataTypeInferred": true,
+  "expression": "DIVIDE(Sales[GM Amount],Sales[Sales Amount],0)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "lineageTag": "f3bd3661-aace-41ec-875a-93ffad22630d",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

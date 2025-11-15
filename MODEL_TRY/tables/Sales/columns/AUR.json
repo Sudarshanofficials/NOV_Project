@@ -1,0 +1,16 @@
+{
+  "type": "calculated",
+  "name": "AUR",
+  "dataType": "double",
+  "isDataTypeInferred": true,
+  "expression": "DIVIDE(Sales[Sales Amount],Sales[Order Quantity],0)",
+  "formatString": "\\$#,0.0000;(\\$#,0.0000);\\$#,0.0000",
+  "lineageTag": "2457b33a-3864-46e3-ba2b-fc3c4e93d21b",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

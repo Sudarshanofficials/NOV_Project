@@ -1,0 +1,30 @@
+{
+  "type": "calculated",
+  "name": "Price Bracket",
+  "dataType": "string",
+  "isDataTypeInferred": true,
+  "expression": [
+    "",
+    "SWITCH(",
+    "    TRUE(),",
+    "    [List Price] <= 10, \"0 – 10\",",
+    "    [List Price] <= 20, \"10.01 – 20\",",
+    "    [List Price] <= 50, \"20.01 – 50\",",
+    "    [List Price] <= 100, \"50.01 – 100\",",
+    "    [List Price] <= 200, \"100.01 – 200\",",
+    "    [List Price] <= 500, \"200.01 – 500\",",
+    "    [List Price] <= 1000, \"500.01 – 1000\",",
+    "    [List Price] <= 2000, \"1000.01 – 2000\",",
+    "    [List Price] <= 5000, \"2000.01 – 5000\",",
+    "    \"5000.01+\"",
+    ")"
+  ],
+  "lineageTag": "cc948d64-a8be-4bac-94cc-b53145fcc3b9",
+  "summarizeBy": "none",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    }
+  ]
+}

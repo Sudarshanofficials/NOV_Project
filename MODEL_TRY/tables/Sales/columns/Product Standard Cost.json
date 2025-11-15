@@ -1,0 +1,18 @@
+{
+  "name": "Product Standard Cost",
+  "dataType": "double",
+  "sourceColumn": "Product Standard Cost",
+  "formatString": "\\$#,0.0000;(\\$#,0.0000);\\$#,0.0000",
+  "lineageTag": "0b4f12cd-4aba-492c-a75c-5d69889b8c36",
+  "summarizeBy": "sum",
+  "annotations": [
+    {
+      "name": "SummarizationSetBy",
+      "value": "Automatic"
+    },
+    {
+      "name": "PBI_FormatHint",
+      "value": "{\"currencyCulture\":\"en-US\"}"
+    }
+  ]
+}

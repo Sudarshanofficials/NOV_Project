@@ -1,0 +1,5 @@
+{
+  "name": "AUC_Color",
+  "expression": "IF(SUM(Sales[AUR])<SUM(Sales[AUC]), \"#FF0000\",\"#000000\")",
+  "lineageTag": "a9d7c98f-e33c-44bf-b46e-e03e4165569c"
+}

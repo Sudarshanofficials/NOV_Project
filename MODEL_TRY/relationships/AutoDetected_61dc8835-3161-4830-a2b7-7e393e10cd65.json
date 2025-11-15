@@ -1,0 +1,7 @@
+{
+  "name": "AutoDetected_61dc8835-3161-4830-a2b7-7e393e10cd65",
+  "fromTable": "Sales",
+  "fromColumn": "CustomerKey",
+  "toTable": "Customer",
+  "toColumn": "CustomerKey"
+}

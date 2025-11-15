@@ -1,0 +1,7 @@
+{
+  "name": "AutoDetected_25d1ba46-cb26-45e8-bb70-673c2e24f566",
+  "fromTable": "Sales",
+  "fromColumn": "ProductKey",
+  "toTable": "Product",
+  "toColumn": "ProductKey"
+}

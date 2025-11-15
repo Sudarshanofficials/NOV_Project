@@ -1,0 +1,14 @@
+{
+  "name": "Sales",
+  "lineageTag": "777ddb34-cf26-4e66-a19d-1bc8af5a0935",
+  "annotations": [
+    {
+      "name": "PBI_ResultType",
+      "value": "Table"
+    },
+    {
+      "name": "PBI_NavigationStepName",
+      "value": "Navigation"
+    }
+  ]
+}
